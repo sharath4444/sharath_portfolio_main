@@ -219,11 +219,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 to_name: 'Sharathchandra'
             };
 
-            // ✅ Updated with your actual service and template ID
+            
             emailjs.send('service_tpr25bq', 'template_2ysvs6t', templateParams)
                 .then(() => {
                     alert('Message sent successfully!');
                     contactForm.reset();
+
+                    // ➤ Send confirmation to the user
+                    emailjs.send('service_tpr25bq', 'template_1pby0bm', templateParams);
                 })
                 .catch(() => {
                     alert('Failed to send message. Try again later.');
